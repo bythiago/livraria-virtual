@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_CONNECTION: sqlite
+    ports:
+      - "8000:8000"
